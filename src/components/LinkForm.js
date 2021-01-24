@@ -15,7 +15,7 @@ function LinkForm({refreshLinks }) {
         e.preventDefault();
         const body = { name, url, description };
         try{
-            const res=await fetch('/api/createLinks',{
+            const res=await fetch('/.netlify/functions/createLinks',{
                method:'POST',
                body:JSON.stringify(body),
             });
@@ -28,11 +28,11 @@ function LinkForm({refreshLinks }) {
     }
 
     return (
-        <div className="card">
+        <div className="card" >
             <div className="card-header">
                 Add Link
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="m-3" >
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <input
