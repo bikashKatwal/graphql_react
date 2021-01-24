@@ -15,7 +15,7 @@ function LinkForm({refreshLinks }) {
         e.preventDefault();
         const body = { name, url, description };
         try{
-            const res=await fetch('/.netlify/functions/createLinks',{
+            const res = await fetch('/.netlify/functions/createLinks', {
                method:'POST',
                body:JSON.stringify(body),
             });
